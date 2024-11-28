@@ -32,16 +32,26 @@ const teams = [
   },
 ]
 
-for(let stats of teams){
-  for(let key in stats){
-    stats[key] = RandomNumber(1,50)
-    console.log(stats[key]);
-    
+for (let team of teams){
+  team.cards = randomNumber(1,30)
+  team.faults = randomNumber(1,30)
+}
+
+const newTeams = [];
+
+for (let newTeam of teams){
+  const nuovaSquadra = {
+    name: newTeam.name,
+    faults: newTeam.faults
   }
+
+  newTeams.push(nuovaSquadra)
+
+  console.log(newTeams);
+
 }
 
 
-
-function RandomNumber(min, max) {
+function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
