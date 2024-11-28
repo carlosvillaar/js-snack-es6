@@ -29,3 +29,12 @@ const raceBikes = [
   }
 ]
 
+let lightBike = raceBikes[0];
+
+for (let i = 0; i < raceBikes.length; i++){
+  const bike = raceBikes[i];
+  if (bike.weight < lightBike.weight){
+    lightBike = bike
+  }
+}
+console.log(lightBike);
